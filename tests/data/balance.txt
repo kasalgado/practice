@@ -1,0 +1,3 @@
+Month   Amount
+Januar  10000
+Februar 20000
