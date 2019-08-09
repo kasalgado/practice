@@ -1,6 +1,6 @@
 <?php declare (strict_types=1);
 
-namespace App\Interfaces;
+namespace App\Documents;
 
 class DocumentStore
 {
@@ -16,7 +16,7 @@ class DocumentStore
         $this->documents[$key] = $content;
     }
     
-    public function getDocuments()
+    public function getDocuments(): array
     {
         return $this->documents;
     }

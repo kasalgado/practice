@@ -1,6 +1,6 @@
 <?php declare (strict_types=1);
 
-namespace App\Interfaces;
+namespace App\Documents;
 
 class StreamDocument implements Documentable
 {

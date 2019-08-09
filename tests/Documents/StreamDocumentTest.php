@@ -1,9 +1,9 @@
 <?php declare (strict_types=1);
 
-namespace tests\Interfaces;
+namespace tests\Documents;
 
 use PHPUnit\Framework\TestCase;
-use App\Interfaces\StreamDocument;
+use App\Documents\StreamDocument;
 
 class StreamDocumentTest extends TestCase
 {
@@ -12,6 +12,6 @@ class StreamDocumentTest extends TestCase
         $resource = fopen(__DIR__ . '/../data/balance.txt', 'r');
         $document = new StreamDocument($resource);
         
-        var_dump($document->getId(), $document->getContent());
+        $this->assertEquals(43, strlen($document->getContent()));
     }
 }

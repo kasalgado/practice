@@ -1,9 +1,9 @@
 <?php declare (strict_types=1);
 
-namespace tests\Interfaces;
+namespace tests\Documents;
 
 use PHPUnit\Framework\TestCase;
-use App\Interfaces\HTMLDocument;
+use App\Documents\HTMLDocument;
 
 class HTMLDocumentTest extends TestCase
 {
