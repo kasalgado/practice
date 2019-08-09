@@ -12,6 +12,6 @@ class StreamDocumentTest extends TestCase
         $resource = fopen(__DIR__ . '/../data/balance.txt', 'r');
         $document = new StreamDocument($resource);
         
-        $this->assertEquals(43, strlen($document->getContent()));
+        $this->assertEquals(46, strlen($document->getContent()));
     }
 }

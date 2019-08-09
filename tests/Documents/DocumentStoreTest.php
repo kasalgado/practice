@@ -31,11 +31,12 @@ class DocumentStoreTest extends TestCase
     
     public function testCanCreateShellCommand()
     {
-        $command = 'cat tests/data/balance.txt';
-        $commandDocument = new CommandOutputDocument($command);
-        $documentStore = new DocumentStore($commandDocument);
+        $commandDocumentMock = $this->createMock(CommandOutputDocument::class);
+        $commandDocumentMock->method('getId')->willReturn('whoami');
+        $commandDocumentMock->method('getContent')->willReturn('admin');
+        $documentStore = new DocumentStore($commandDocumentMock);
         $documents = $documentStore->getDocuments();
         
-        $this->assertTrue(key_exists($command, $documents));
+        $this->assertTrue(key_exists('whoami', $documents));
     }
 }

@@ -9,9 +9,9 @@ class CommandOutputDocumentTest extends TestCase
 {
     public function testCanGetCommandResult()
     {
-        $command = 'cat tests/data/balance.txt';
-        $commandDocument = new CommandOutputDocument($command);
+        $commandDocumentMock = $this->createMock(CommandOutputDocument::class);
+        $commandDocumentMock->method('getContent')->willReturn('admin');
         
-        $this->assertEquals(43, strlen($commandDocument->getContent()));
+        $this->assertEquals('admin', $commandDocumentMock->getContent());
     }
 }
