@@ -3,10 +3,10 @@
 namespace tests\Documents;
 
 use PHPUnit\Framework\TestCase;
-use App\Documents\DocumentStore;
-use App\Documents\StreamDocument;
-use App\Documents\HTMLDocument;
-use App\Documents\CommandOutputDocument;
+use App\Interfaces\DocumentStore;
+use App\Interfaces\StreamDocument;
+use App\Interfaces\HTMLDocument;
+use App\Interfaces\CommandOutputDocument;
 
 class DocumentStoreTest extends TestCase
 {

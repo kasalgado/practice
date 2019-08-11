@@ -3,7 +3,7 @@
 namespace tests\Documents;
 
 use PHPUnit\Framework\TestCase;
-use App\Documents\StreamDocument;
+use App\Interfaces\StreamDocument;
 
 class StreamDocumentTest extends TestCase
 {

@@ -1,8 +1,8 @@
 <?php declare (strict_types=1);
 
-namespace App\GeoCodable;
+namespace App\Traits;
 
-class Toyota
+class Ford
 {
     use Car;
     

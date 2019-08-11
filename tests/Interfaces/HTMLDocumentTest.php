@@ -3,7 +3,7 @@
 namespace tests\Documents;
 
 use PHPUnit\Framework\TestCase;
-use App\Documents\HTMLDocument;
+use App\Interfaces\HTMLDocument;
 
 class HTMLDocumentTest extends TestCase
 {

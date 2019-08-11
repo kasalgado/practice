@@ -3,7 +3,7 @@
 namespace tests\Documents;
 
 use PHPUnit\Framework\TestCase;
-use App\Documents\CommandOutputDocument;
+use App\Interfaces\CommandOutputDocument;
 
 class CommandOutputDocumentTest extends TestCase
 {

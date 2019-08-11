@@ -1,6 +1,6 @@
 <?php declare (strict_types=1);
 
-namespace App\Documents;
+namespace App\Interfaces;
 
 class DocumentStore
 {

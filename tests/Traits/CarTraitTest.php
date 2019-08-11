@@ -1,10 +1,10 @@
 <?php declare (strict_types=1);
 
-namespace tests\GeoCodable;
+namespace tests\Traits;
 
 use PHPUnit\Framework\TestCase;
-use App\GeoCodable\Toyota;
-use App\GeoCodable\Ford;
+use App\Traits\Toyota;
+use App\Traits\Ford;
 
 class CarTraitTest extends TestCase
 {
