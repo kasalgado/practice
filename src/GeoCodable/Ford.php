@@ -2,7 +2,7 @@
 
 namespace App\GeoCodable;
 
-class Toyota
+class Ford
 {
     use Car;
     

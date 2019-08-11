@@ -13,15 +13,20 @@ trait Car
         'CR7',
     ];
     
-    public function isMotorTypeAvailable(string $type)
+    public function isMotorTypeAvailable(string $type): bool
     {
         $this->motorType = $type;
         
         return $this->typeExists();
     }
     
-    private function typeExists()
+    private function typeExists(): bool
     {
         return in_array($this->motorType, $this->types);
+    }
+    
+    private function typeNoExists(): bool
+    {
+        return !in_array($this->motorType, $this->types);
     }
 }
