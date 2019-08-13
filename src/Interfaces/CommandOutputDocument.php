@@ -16,12 +16,12 @@ class CommandOutputDocument implements Documentable
         $this->command = $command;
     }
 
-    public function getContent()
+    public function getContent(): string
     {
         return shell_exec($this->command);
     }
 
-    public function getId()
+    public function getId(): string
     {
         return $this->command;
     }
