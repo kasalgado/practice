@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Documents;
+namespace App\Interfaces;
 
 interface Documentable
 {

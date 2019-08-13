@@ -1,8 +1,8 @@
 <?php declare (strict_types=1);
 
-namespace App\Documents;
+namespace App\Interfaces;
 
-use App\Documents\Documentable;
+use App\Interfaces\Documentable;
 
 class CommandOutputDocument implements Documentable
 {

@@ -3,10 +3,10 @@
 namespace tests\Documents;
 
 use PHPUnit\Framework\TestCase;
-use App\Documents\DocumentStore;
-use App\Documents\StreamDocument;
-use App\Documents\HTMLDocument;
-use App\Documents\CommandOutputDocument;
+use App\Interfaces\DocumentStore;
+use App\Interfaces\StreamDocument;
+use App\Interfaces\HTMLDocument;
+use App\Interfaces\CommandOutputDocument;
 
 class DocumentStoreTest extends TestCase
 {
@@ -31,11 +31,12 @@ class DocumentStoreTest extends TestCase
     
     public function testCanCreateShellCommand()
     {
-        $command = 'cat tests/data/balance.txt';
-        $commandDocument = new CommandOutputDocument($command);
-        $documentStore = new DocumentStore($commandDocument);
+        $commandDocumentMock = $this->createMock(CommandOutputDocument::class);
+        $commandDocumentMock->method('getId')->willReturn('whoami');
+        $commandDocumentMock->method('getContent')->willReturn('admin');
+        $documentStore = new DocumentStore($commandDocumentMock);
         $documents = $documentStore->getDocuments();
         
-        $this->assertTrue(key_exists($command, $documents));
+        $this->assertTrue(key_exists('whoami', $documents));
     }
 }
