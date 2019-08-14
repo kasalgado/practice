@@ -23,6 +23,14 @@ class ReturnDataTest extends TestCase
         $this->assertEquals($expected, $mapping->getResult([1, 2, 3]));
     }
     
+    public function testCanGetMappedResultFromNumbersWithAddition()
+    {
+        $expected = [6, 7, 8];
+        $mapping = new Mapping();
+        
+        $this->assertEquals($expected, $mapping->getResultWithNumber(5, [1, 2, 3]));
+    }
+    
     public function testCanGetTextFromClosure()
     {
         $expected = 'KAS, how are you today?';

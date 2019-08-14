@@ -18,8 +18,8 @@ class Attach
     
     private function create(string $name, string $content): string
     {
-        $text = $this->getName($name);
+        $setName = $this->getName($name);
         
-        return $text($content);
+        return $setName($content);
     }
 }
