@@ -13,7 +13,7 @@ class StreamDocument implements Documentable
         $this->buffer = $buffer;
     }
     
-    public function getContent()
+    public function getContent(): string
     {
         $streamContent = '';
         rewind($this->resource);
@@ -25,7 +25,7 @@ class StreamDocument implements Documentable
         return $streamContent;
     }
 
-    public function getId()
+    public function getId(): string
     {
         return 'resource-' . (int) $this->resource;
     }
