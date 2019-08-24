@@ -26,7 +26,11 @@ class DocumentStoreTest extends TestCase
         $documentStore = new DocumentStore($document);
         $documents = $documentStore->getDocuments();
         
-        $this->assertEquals($url, key($documents));
+        if ($document->checkServerUp()) {
+            $this->assertEquals($url, key($documents));
+        } else {
+            $this->assertFalse($document->checkServerUp());
+        }
     }
     
     public function testCanCreateShellCommand()

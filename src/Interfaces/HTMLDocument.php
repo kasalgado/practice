@@ -11,7 +11,7 @@ class HTMLDocument implements Documentable
         $this->url = $url;
     }
 
-    public function getContent(): string
+    public function getContent()
     {
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, $this->url);
@@ -28,5 +28,10 @@ class HTMLDocument implements Documentable
     public function getId(): string
     {
         return $this->url;
+    }
+    
+    public function checkServerUp()
+    {
+        return php_sapi_name() === 'cli-server' ? true : false;
     }
 }
