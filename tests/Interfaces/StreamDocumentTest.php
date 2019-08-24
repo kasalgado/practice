@@ -9,9 +9,10 @@ class StreamDocumentTest extends TestCase
 {
     public function testCanGetStreamContent()
     {
-        $resource = fopen(__DIR__ . '/../data/balance.txt', 'r');
+        $filePath = __DIR__ . '/../data/balance.txt';
+        $resource = fopen($filePath, 'r');
         $document = new StreamDocument($resource);
         
-        $this->assertEquals(46, strlen($document->getContent()));
+        $this->assertEquals(strlen(file_get_contents($filePath)), strlen($document->getContent()));
     }
 }
