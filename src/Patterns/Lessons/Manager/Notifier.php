@@ -6,7 +6,16 @@ abstract class Notifier
 {
     public static function get(int $type): object
     {
-        return $type === 1 ? new MailNotifier() : new TextNotifier();
+        switch ($type) {
+            case 1:
+                return new MailNotifier();
+                
+            case 2:
+                return new TextNotifier();
+                
+            case 3:
+                return new SMSNotifier();
+        }
     }
     
     abstract function inform(string $message): string;
