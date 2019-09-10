@@ -28,7 +28,7 @@ class MoneyTest extends TestCase
         $this->assertEquals($expected, $moneyToAdd->getValue());
     }
     
-    public function testCanGetSameValue()
+    public function testCanGetSameValueByAddingNull()
     {
         $expected = 100;
         $money1 = new Money(100);
