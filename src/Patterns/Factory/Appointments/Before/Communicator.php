@@ -5,23 +5,23 @@ namespace App\Patterns\Factory\Appointments\Before;
 class Communicator
 {
     const BLOGG = 1;
-    const CALL = 2;
+    const MEGA = 2;
     
-    private $type;
+    private $mode;
     
-    public function __construct(int $type)
+    public function __construct(int $mode)
     {
-        $this->type = $type;
+        $this->mode = $mode;
     }
     
     public function getEncoder(): AppointmentEncoder
     {
-        switch ($this->type) {
+        switch ($this->mode) {
             case self::BLOGG:
                 return new BloggEncoder();
                 
-            case self::CALL:
-                return new CallEncoder();
+            case self::MEGA:
+                return new MegaEncoder();
         }
     }
 }

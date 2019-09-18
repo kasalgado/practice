@@ -5,7 +5,7 @@ namespace tests\Patterns\Factory\Appointments\Before;
 use PHPUnit\Framework\TestCase;
 use App\Patterns\Factory\Appointments\Before\Communicator;
 use App\Patterns\Factory\Appointments\Before\BloggEncoder;
-use App\Patterns\Factory\Appointments\Before\CallEncoder;
+use App\Patterns\Factory\Appointments\Before\MegaEncoder;
 
 class CreateEncoderTest extends TestCase
 {
@@ -16,16 +16,16 @@ class CreateEncoderTest extends TestCase
         $encoder = $communicator->getEncoder();
         
         $this->assertInstanceOf(BloggEncoder::class, $encoder);
-        $this->assertEquals($expected, $encoder->getMessage());
+        $this->assertEquals($expected, $encoder->encode());
     }
     
-    public function testCanGetCallEncoder()
+    public function testCanGetMegaEncoder()
     {
         $expected = 'Message from Call-Communicator';
-        $communicator = new Communicator(Communicator::CALL);
+        $communicator = new Communicator(Communicator::MEGA);
         $encoder = $communicator->getEncoder();
         
-        $this->assertInstanceOf(CallEncoder::class, $encoder);
-        $this->assertEquals($expected, $encoder->getMessage());
+        $this->assertInstanceOf(MegaEncoder::class, $encoder);
+        $this->assertEquals($expected, $encoder->encode());
     }
 }

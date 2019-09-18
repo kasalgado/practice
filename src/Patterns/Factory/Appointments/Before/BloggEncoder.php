@@ -4,7 +4,7 @@ namespace App\Patterns\Factory\Appointments\Before;
 
 class BloggEncoder extends AppointmentEncoder
 {
-    public function getMessage(): string
+    public function encode(): string
     {
         return 'Message from Blogg-Communicator';
     }

@@ -2,9 +2,9 @@
 
 namespace App\Patterns\Factory\Appointments\Before;
 
-class CallEncoder extends AppointmentEncoder
+class MegaEncoder extends AppointmentEncoder
 {
-    public function getMessage(): string
+    public function encode(): string
     {
         return 'Message from Call-Communicator';
     }
