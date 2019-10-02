@@ -4,7 +4,7 @@ namespace App\BindTo;
 
 class Route
 {
-    /** @var string */
+    /** @var array */
     private $routes = [];
     
     /** @var string */
@@ -16,15 +16,15 @@ class Route
     /** @var string */
     private $responseBody = 'Hello Malin';
     
-    public function add($routePath, $routeCallback)
+    public function add(string $routePath, object $routeCallback): void
     {
         $this->routes[$routePath] = $routeCallback->bindTo($this, __CLASS__);
     }
     
-    public function dispatch($currentPath)
+    public function dispatch(string $currentPath): string
     {
         foreach ($this->routes as $routePath => $callback) {
-            if ($routePath == $callback) {
+            if ($routePath === $callback) {
                 $callback();
             }
         }
