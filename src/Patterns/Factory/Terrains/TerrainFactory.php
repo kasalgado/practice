@@ -5,6 +5,6 @@ namespace App\Patterns\Factory\Terrains;
 abstract class TerrainFactory
 {
     public abstract function getPlains(): Plains;
-    public abstract function getSea(): Seat;
+    public abstract function getSea(): Sea;
     public abstract function getForest(): Forest;
 }
