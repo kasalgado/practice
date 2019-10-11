@@ -14,7 +14,7 @@ class EarthTerrainFactory extends TerrainFactory
         return new EarthPlains();
     }
 
-    public function getSea(): Seat
+    public function getSea(): Sea
     {
         return new EarthSea();
     }
