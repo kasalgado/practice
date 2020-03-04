@@ -8,16 +8,16 @@ class Fibonacci
     private $length;
     
     /* @var array */
-    private $result = [0, 1];
+    private $result;
     
     public function __construct(int $length)
     {
         $this->length = $length;
-        $this->create();
     }
     
-    private function create(): void
+    private function createIterative(): void
     {
+        $this->result = [0, 1];
         $last = 0;
         $current = 1;
         
@@ -28,8 +28,27 @@ class Fibonacci
         }
     }
     
-    public function result(): array
+    private function createRecursive(int $counter): int
     {
+        if ($counter === 0 || $counter === 1) {
+            return $counter;
+        } else {
+            return ($this->createRecursive($counter - 1) + $this->createRecursive($counter - 2));
+        }
+    }
+    
+    public function iterative(): array
+    {
+        $this->createIterative();
+        return $this->result;
+    }
+    
+    public function recursive(): array
+    {
+        for ($x = 0; $x < $this->length; $x++) {
+            $this->result[] = $this->createRecursive($x);
+        }
+        
         return $this->result;
     }
 }

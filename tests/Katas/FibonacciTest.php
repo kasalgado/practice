@@ -12,6 +12,14 @@ class FibonacciTest extends TestCase
         $expected = [0, 1, 1, 2, 3, 5, 8, 13, 21, 34];
         $fibonacci = new Fibonacci(10);
         
-        $this->assertEquals($expected, $fibonacci->result());
+        $this->assertEquals($expected, $fibonacci->iterative());
+    }
+    
+    public function testCanGetArrayWithTenNumbersFromRecursiveFunction()
+    {
+        $expected = [0, 1, 1, 2, 3, 5, 8, 13, 21, 34];
+        $fibonacci = new Fibonacci(10);
+        
+        $this->assertEquals($expected, $fibonacci->recursive());
     }
 }
