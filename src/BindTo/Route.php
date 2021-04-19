@@ -29,9 +29,9 @@ class Route
             }
         }
         
-        // header('HTTP/1.1' . $this->responseStatus);
-        // header('Content-type:' . $this->responseContentType);
-        // header('Content-length:' . mb_strlen($this->responseBody));
+//        header('HTTP/1.1' . $this->responseStatus);
+//        header('Content-type:' . $this->responseContentType);
+//        header('Content-length:' . mb_strlen($this->responseBody));
         
         return $this->responseBody;
     }

@@ -2,7 +2,7 @@
 
 namespace App\Katas;
 
-class NumberPesistence
+class NumberPersistence
 {
     public function getMyTotal(int $num): int
     {

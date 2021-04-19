@@ -7,5 +7,9 @@ use PHPUnit\Framework\TestCase;
 
 class UtopianTreeTest extends TestCase
 {
-
+    public function testGetHeight()
+    {
+        $ut = new UtopianTree(5);
+        $this->assertEquals(14, $ut->getHeight());
+    }
 }
